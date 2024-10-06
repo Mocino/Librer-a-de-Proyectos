@@ -19,7 +19,7 @@ export class AddEditPatientComponent implements OnInit{
   myForm(): void {
     this.patientForm = this.fb.group({
       nombrePaciente: ['', [Validators.required, Validators.minLength(3)]],
-      contacto: ['', [Validators.required,   Validators.pattern(/^(?:[^@]+@[^@]+\.[a-zA-Z]{2,}|\d{8})$/)      ]],
+      contacto: ['', [Validators.required, Validators.pattern(/^(?:[^@]+@[^@]+\.[a-zA-Z]{2,}|\d{8})$/)]],
       fechaCita: ['', Validators.required],
       parteAfectada: ['', Validators.required],
       observacion: ['']

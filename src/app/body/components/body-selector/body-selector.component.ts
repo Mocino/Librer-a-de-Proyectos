@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-body-selector',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./body-selector.component.css']
 })
 export class BodySelectorComponent {
+  @Output() partClicked: EventEmitter<string> = new EventEmitter<string>();
   hoveredPart: string | null = null;
 
   onMouseEnter(part: string) {
@@ -18,5 +19,11 @@ export class BodySelectorComponent {
 
   isPartHovered(part: string): boolean {
     return this.hoveredPart === part;
+  }
+
+  // Este método se activa al hacer clic en una parte
+  onClick(part: string) {
+    this.partClicked.emit(part); // Emitir el nombre de la parte seleccionada
+    console.log('your part: ', part)
   }
 }
