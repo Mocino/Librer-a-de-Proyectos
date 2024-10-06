@@ -1,41 +1,48 @@
-/* Asegúrate de que el contenedor principal tenga position: relative */
-body {
-  position: relative; /* Asegúrate de que el body tenga posición relativa */
-  margin: 0; /* Elimina márgenes por defecto */
-  height: 100vh; /* Asegúrate de que el body ocupe toda la altura de la ventana */
+/* Estilo para el contenedor del menú */
+.menu {
+  width: 200px; /* Define el ancho del menú lateral en 200px */
+  background-color: #004869; /* Establece el color de fondo del menú en azul oscuro */
+  padding: 10px; /* Añade un relleno interno de 10px alrededor del contenido del menú */
+  height: 100vh; /* Hace que el menú ocupe toda la altura visible del navegador (100% del viewport) */
 }
 
-.card {
-  border-radius: 10px;
-  position: absolute; /* Cambiar a absolute */
-  top: 10px; /* Ajusta según sea necesario */
-  right: 20px; /* Coloca la tarjeta en la esquina derecha */
-  width: 90%; /* Ancho responsivo */
-  max-width: 300px; /* Ancho máximo */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+/* Contenedor principal que incluye el menú y el contenido */
+.menu-container {
+  display: flex; /* Usa Flexbox para organizar el menú y el contenido horizontalmente */
+  height: 100vh; /* Hace que el contenedor principal ocupe toda la altura de la pantalla */
 }
 
-.centrado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Asegura que .centrado ocupe toda la altura disponible */
-  padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+/* Elimina los estilos predeterminados de la lista (como los puntos) */
+.menu ul {
+  list-style-type: none; /* Quita los marcadores de lista (puntos o números) */
+  padding: 0; /* Elimina el espacio interno predeterminado de la lista */
 }
 
-/* Media Queries para ajustes en pantallas más pequeñas */
-@media (max-width: 768px) {
-  .card-header h3 {
-    font-size: 16px; /* Disminuir el tamaño de fuente en pantallas más pequeñas */
-  }
-
-  .card {
-    width: 95%; /* Aumentar el ancho en pantallas más pequeñas */
-  }
+/* Añade un margen entre cada elemento de la lista del menú */
+.menu li {
+  margin: 15px 0; /* Añade un margen de 15px en la parte superior e inferior de cada elemento */
 }
 
-@media (max-width: 480px) {
-  .card-header h3 {
-    font-size: 14px; /* Disminuir aún más el tamaño de fuente */
-  }
+/* Estilos para los enlaces del menú */
+.menu a {
+  text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+  color: #ffffff; /* Define el color del texto de los enlaces en blanco */
+  font-size: 18px; /* Establece el tamaño de la fuente de los enlaces en 18px */
+  display: block; /* Hace que cada enlace ocupe toda la anchura del contenedor, facilitando que sea clicable */
+  padding: 10px; /* Añade un relleno de 10px dentro de cada enlace, aumentando el área clicable */
+  border-radius: 4px; /* Redondea las esquinas de los enlaces con un radio de 4px */
+  transition: background-color 0.5s; /* Añade una transición suave de 0.3 segundos al cambiar el color de fondo (hover) */
+}
+
+/* Estilo que se aplica cuando se pasa el cursor por encima de los enlaces */
+.menu a:hover {
+  background-color: #315569; /* Cambia el color de fondo a un azul más claro cuando el enlace está en hover */
+}
+
+/* Estilo para el contenedor del contenido principal de la página */
+.content {
+  flex-grow: 1; /* Permite que el área de contenido se expanda para ocupar el espacio restante del contenedor principal */
+  padding: 15px; /* Añade un relleno de 20px dentro del área de contenido */
+  overflow-y: auto;
+  /* background-color: white;  */
 }

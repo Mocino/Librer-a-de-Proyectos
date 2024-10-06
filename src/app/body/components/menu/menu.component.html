@@ -1,8 +1,13 @@
-<div class="card">
-  <div class="card-header">
-    <h3>Selección de Cuerpo</h3>
-  </div>
-  <div class="centrado">
-    <app-body-selector></app-body-selector>
+<div class="menu-container">
+  <nav class="menu">
+    <ul>
+      <li><a routerLink="agregar-paciente">Agregar Paciente</a></li>
+      <li><a routerLink="listado-paciente">Listado de Paciente</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido que se cargará al lado del menú -->
+  <div class="content">
+    <router-outlet></router-outlet>
   </div>
 </div>

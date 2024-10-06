@@ -1,1 +1,110 @@
-<p>add-edit-patient works!</p>
+<div class="cards-container">
+
+  <div class="cardFomulario">
+    <div class="card-header">
+      <h2>Formulario de Fisioterapia</h2>
+    </div>
+    <div class="cardSubformulario">
+
+      <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+
+        <!-- Nombre del paciente -->
+        <div class="formGroup">
+          <label for="nombrePaciente"> Nombre del Paciente</label>
+          <div class="input-icon">
+            <input
+              id="nombrePaciente"
+              class="form-control"
+              formControlName="nombrePaciente"
+              type="text"
+              placeholder="Ingrese nombre del Paciente"
+              [ngClass]="{'valid': patientForm.get('nombrePaciente')?.valid && patientForm.get('nombrePaciente')?.touched, 'invalid': patientForm.get('nombrePaciente')?.invalid && patientForm.get('nombrePaciente')?.touched}">
+            <div *ngIf="patientForm.get('nombrePaciente')?.invalid && patientForm.get('nombrePaciente')?.touched" class="error">
+              El nombre es obligatorio y deberá de tener al menos 3 caracteres
+            </div>
+          </div>
+        </div>
+
+        <!-- Contacto (Email o teléfono) -->
+        <div class="formGroup">
+          <label for="contacto">Contacto </label>
+          <div class="input-icon">
+            <input
+              id="contacto"
+              class="form-control"
+              formControlName="contacto"
+              type="text"
+              placeholder="Ingrese email o teléfono"
+              [ngClass]="{'valid': patientForm.get('contacto')?.valid && patientForm.get('contacto')?.touched, 'invalid': patientForm.get('contacto')?.invalid && patientForm.get('contacto')?.touched}">
+            <div *ngIf="patientForm.get('contacto')?.invalid && patientForm.get('contacto')?.touched" class="error">
+              Ingrese un email o número de teléfono válido
+            </div>
+          </div>
+        </div>
+
+        <!-- Fecha de la cita -->
+        <div class="formGroup">
+          <label for="fechaCita">Fecha de la Cita</label>
+          <div class="input-icon">
+            <input
+              id="fechaCita"
+              class="form-control"
+              formControlName="fechaCita"
+              type="date"
+              [ngClass]="{'valid': patientForm.get('fechaCita')?.valid && patientForm.get('fechaCita')?.touched, 'invalid': patientForm.get('fechaCita')?.invalid && patientForm.get('fechaCita')?.touched}">
+            <div *ngIf="patientForm.get('fechaCita')?.invalid && patientForm.get('fechaCita')?.touched" class="error">
+              La fecha es obligatoria.
+            </div>
+          </div>
+        </div>
+
+        <!-- Parte afectada -->
+        <div class="formGroup">
+          <label for="parteAfectada">Parte Afectada</label>
+          <div class="input-icon">
+            <input
+              id="parteAfectada"
+              class="form-control"
+              formControlName="parteAfectada"
+              type="text"
+              placeholder="Ingrese la parte afectada"
+              [ngClass]="{'valid': patientForm.get('parteAfectada')?.valid && patientForm.get('parteAfectada')?.touched, 'invalid': patientForm.get('parteAfectada')?.invalid && patientForm.get('parteAfectada')?.touched}">
+            <div *ngIf="patientForm.get('parteAfectada')?.invalid && patientForm.get('parteAfectada')?.touched" class="error">
+              La parte afectada es obligatoria.
+            </div>
+          </div>
+        </div>
+
+        <!-- Observaciones -->
+        <div class="formGroup">
+          <label for="observacion">Observaciones</label>
+          <textarea
+            id="observacion"
+            class="form-control"
+            formControlName="observacion"
+            placeholder="Ingrese observaciones"></textarea>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="botones">
+          <button class="btn btn-primary" type="submit" [disabled]="patientForm.invalid">Guardar</button>
+          <button class="btn btn-secondary" type="button" (click)="onReset()">Limpiar</button>
+        </div>
+      </form>
+
+
+    </div>
+
+  </div>
+
+  <div class="cardBody">
+    <div class="card-header">
+      <h3>Selección de Cuerpo</h3>
+    </div>
+    <div class="centrado">
+      <app-body-selector></app-body-selector>
+    </div>
+  </div>
+
+</div>
+

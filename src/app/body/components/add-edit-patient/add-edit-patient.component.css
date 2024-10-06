@@ -1,0 +1,163 @@
+/* .card1 {
+  max-width: 750px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header1 {
+  background-color: #f8f9fa;
+} */
+
+/* .card-header1 h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.form-group1 {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  margin-left: 10px;
+}
+
+
+
+
+ */
+
+ .cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+ .cardFomulario {
+  border-radius: 10px; /* Bordes redondeados */
+  width: 700px; /* Ancho de la tarjeta */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+}
+
+ .cardSubformulario {
+  padding: 20px;
+}
+
+ .cardBody {
+  border-radius: 10px; /* Bordes redondeados */
+  width: 250px; /* Ancho de la tarjeta */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+  margin-left: auto; /* Alinea la tarjeta a la derecha */
+}
+
+.card-header {
+  border-top-left-radius: 10px; /* Borde redondeado superior izquierdo */
+  border-top-right-radius: 10px; /* Borde redondeado superior derecho */
+  background-color: #f0f0f0; /* Color de fondo gris claro */
+  border-bottom: 2px solid #ccc; /* Línea divisoria en la parte inferior */
+  padding: 10px; /* Añade un poco de espacio alrededor del encabezado */
+}
+
+.card-header h3 {
+  font-size: 20px; /* Ajusta este valor según sea necesario */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.centrado {
+  display: flex; /* Usa flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 10px; /* Añade un poco de espacio alrededor del contenido */
+}
+
+
+
+
+
+
+/* Estilo para los grupos de formulario */
+.formGroup {
+  margin-bottom: 10px; /* Espacio entre grupos */
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-weight: bold; /* Negrita para las etiquetas */
+  margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+  display: block; /* Muestra la etiqueta como bloque */
+}
+
+/* Estilo para los inputs y textarea */
+.form-control {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Estilo para el input válido */
+.form-control.valid {
+  border-color: #28a745; /* Borde verde */
+}
+
+/* Estilo para el input inválido */
+.form-control.invalid {
+  border-color: #dc3545; /* Borde rojo */
+}
+
+/* Estilo para el mensaje de error */
+.error {
+  color: #dc3545; /* Texto rojo para errores */
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  margin-top: 5px; /* Espacio encima del mensaje */
+}
+
+.btn {
+  padding: 10px 20px; /* Espaciado interno para botones */
+  font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de puntero */
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px; /* Ajusta este valor según necesites */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  margin-left: 10px;
+}
