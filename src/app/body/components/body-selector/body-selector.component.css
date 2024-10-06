@@ -1,0 +1,131 @@
+.cuadro {
+  width: 230px;
+  height: 520px;
+  border-radius: 20px;
+  background-color: rgb(153, 202, 229);
+  position: relative;
+}
+
+path {
+  transition: fill 0.2s ease;
+}
+
+path.hovered {
+  fill: red;
+}
+
+.cabeza, .cuello, .brazoi, .brazod, .torzo, .piernai, .piernad, .pied, .piei {
+  position: absolute;
+  pointer-events: none; /* Ignora eventos de mouse en el SVG */
+}
+
+.cabeza path, .cuello path, .brazoi path, .brazod path, .torzo path, .piernai path, .piernad path, .pied path, .piei path {
+  pointer-events: auto; /* Permite eventos de mouse solo en el path */
+  transform: scale(0.5);
+}
+
+.cabeza {
+  top: 5px; /* Parte superior de la cabeza */
+  left: calc(50% - 36.7px); /* Centro de la cabeza */
+}
+
+.cuello {
+  top: 65px; /* Ajusta según sea necesario (debajo de la cabeza) */
+  left: calc(50% - 52px); /* Centro de la cabeza */
+}
+
+.torzo {
+  top: 94px; /* Ajusta según sea necesario */
+  left: calc(50% - 55px); /* Centro del torso */
+}
+
+.brazoi {
+  top: 89px; /* Parte superior del brazo izquierdo */
+  left: calc(50% - 116px); /* Ajuste para centrar la pierna izquierda */
+}
+
+.brazod {
+  top: 90.5px; /* Parte superior del brazo derecho */
+  left: calc(50% + 25px); /* Ajuste para centrar la pierna izquierda */
+}
+
+.piernai {
+  top: 219px; /* Parte superior de la pierna izquierda */
+  left: calc(50% + 1.5px); /* Ajuste para centrar la pierna derecha */
+}
+
+.piernad {
+  top: 219px; /* Parte superior de la pierna derecha */
+  left: calc(50% - 58px); /* Ajuste para centrar la pierna izquierda */
+}
+
+.pied {
+  top: 357px; /* Parte superior del pie izquierdo */
+  left: calc(50% - 62px); /* Ajuste para centrar el pie izquierdo */
+}
+
+.piei {
+  top: 351px; /* Parte superior del pie derecho */
+  left: calc(50% + 2px); /* Ajuste para centrar el pie derecho */
+}
+
+
+
+
+/*
+.cuadro {
+  width: 300px;
+  height: 560px;
+  background-color: rgb(153, 202, 229);
+  position: relative;
+}
+
+.cabeza{
+position: absolute;
+left: 170px;
+top: 50px;
+}
+
+.cuello{
+  position: absolute;
+  left: 146px;
+  top: 163px;
+  }
+
+.brazos{
+  position: absolute;
+  left: 17px;
+  top: 208px;
+}
+
+.torzo{
+  position: absolute;
+  left: 140px;
+  top: 232px;
+}
+
+.pierna{
+  position: absolute;
+  left: 114px;
+  top: 462px;
+}
+
+.pies{
+  position: absolute;
+  left: 126px;
+  top: 737px;
+}
+
+
+.cabeza:hover img, .cuello:hover img, .brazos:hover img, .torzo:hover img, .pierna:hover img, .pies:hover img {
+  filter:
+  brightness(0)
+  saturate(100%)
+  invert(15%)
+  sepia(95%)
+  saturate(6932%)
+  hue-rotate(359deg)
+  brightness(94%)
+  contrast(112%);
+}
+ */
