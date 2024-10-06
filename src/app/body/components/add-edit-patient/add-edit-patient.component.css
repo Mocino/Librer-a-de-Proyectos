@@ -56,6 +56,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 10px;
+  overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
 }
 
  .cardFomulario {
