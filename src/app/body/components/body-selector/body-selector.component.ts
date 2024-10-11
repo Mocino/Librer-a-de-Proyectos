@@ -24,6 +24,10 @@ export class BodySelectorComponent {
     return this.hoveredPart === part;
   }
 
+  isPartSelected(part: string): boolean {
+    return this.selectedParts.has(part);
+  }
+
   onClick(part: string) {
     if (this.selectedParts.has(part)) {
       this.selectedParts.delete(part);
