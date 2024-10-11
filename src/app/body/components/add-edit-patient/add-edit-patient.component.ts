@@ -39,4 +39,11 @@ export class AddEditPatientComponent implements OnInit{
     this.patientForm.reset();
   }
 
+  onPartSelected(part: string): void {
+    this.patientForm.patchValue({
+      parteAfectada: part,
+    });
+    console.log('your part en add-edit',part)
+  }
+
 }

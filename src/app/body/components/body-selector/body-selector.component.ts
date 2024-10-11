@@ -10,6 +10,7 @@ export class BodySelectorComponent {
   @Output() partClicked: EventEmitter<string> = new EventEmitter<string>();
   hoveredPart: string | null = null;
   bodyPart: BodyPart = BODY_PARTS;
+  selectedParts: Set<string> = new Set();
 
   onMouseEnter(part: string) {
     this.hoveredPart = part;
@@ -23,9 +24,12 @@ export class BodySelectorComponent {
     return this.hoveredPart === part;
   }
 
-  // Este método se activa al hacer clic en una parte
   onClick(part: string) {
-    this.partClicked.emit(part); // Emitir el nombre de la parte seleccionada
-    console.log('your part: ', part)
+    if (this.selectedParts.has(part)) {
+      this.selectedParts.delete(part);
+    } else {
+      this.selectedParts.add(part);
+    }
+    this.partClicked.emit(Array.from(this.selectedParts).join(', '));
   }
 }
