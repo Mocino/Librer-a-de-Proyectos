@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { BODY_PARTS, BodyPart } from '../../utils/body-parts';
 
 @Component({
   selector: 'app-body-selector',
@@ -8,6 +9,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class BodySelectorComponent {
   @Output() partClicked: EventEmitter<string> = new EventEmitter<string>();
   hoveredPart: string | null = null;
+  bodyPart: BodyPart = BODY_PARTS;
 
   onMouseEnter(part: string) {
     this.hoveredPart = part;
