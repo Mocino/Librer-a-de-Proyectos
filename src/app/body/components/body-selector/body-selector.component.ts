@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { BODY_PARTS, BodyPart } from '../../utils/body-parts';
 
 @Component({
@@ -8,9 +8,10 @@ import { BODY_PARTS, BodyPart } from '../../utils/body-parts';
 })
 export class BodySelectorComponent {
   @Output() partClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Input() selectedParts: Set<string> = new Set();
+
   hoveredPart: string | null = null;
   bodyPart: BodyPart = BODY_PARTS;
-  selectedParts: Set<string> = new Set();
 
   onMouseEnter(part: string) {
     this.hoveredPart = part;
@@ -29,11 +30,6 @@ export class BodySelectorComponent {
   }
 
   onClick(part: string) {
-    if (this.selectedParts.has(part)) {
-      this.selectedParts.delete(part);
-    } else {
-      this.selectedParts.add(part);
-    }
-    this.partClicked.emit(Array.from(this.selectedParts).join(', '));
+    this.partClicked.emit(part);
   }
 }
