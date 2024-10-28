@@ -1,10 +1,32 @@
-/* Estilo para el contenedor del menú */
-.menu {
-  width: 200px; /* Define el ancho del menú lateral en 200px */
-  background-color: #004869; /* Establece el color de fondo del menú en azul oscuro */
-  padding: 10px; /* Añade un relleno interno de 10px alrededor del contenido del menú */
-  height: 100vh; /* Hace que el menú ocupe toda la altura visible del navegador (100% del viewport) */
+/* Haz que el contenedor ocupe toda la pantalla */
+.menu-container {
+  display: flex;
+  height: 100vh; /* Altura completa de la ventana */
 }
+
+/* Menú pegado al lado izquierdo de la pantalla */
+.menu {
+  width: 200px; /* Ancho fijo para el menú */
+  background-color: #333; /* Color de fondo */
+  color: white;
+  position: fixed; /* Fijo al lado izquierdo */
+  top: 0;
+  left: 0;
+  height: 100%; /* Altura completa */
+  padding-top: 20px;
+}
+
+
+
+/* Contenido que se muestra al lado del menú */
+.content {
+  margin-left: 200px; /* Compensa el ancho del menú */
+  padding: 20px;
+  width: calc(100% - 200px); /* Ajusta el ancho */
+}
+
+
+
 
 /* Contenedor principal que incluye el menú y el contenido */
 .menu-container {
@@ -14,8 +36,8 @@
 
 /* Elimina los estilos predeterminados de la lista (como los puntos) */
 .menu ul {
-  list-style-type: none; /* Quita los marcadores de lista (puntos o números) */
   padding: 0; /* Elimina el espacio interno predeterminado de la lista */
+  margin-right: 5px;
 }
 
 /* Añade un margen entre cada elemento de la lista del menú */
@@ -37,12 +59,4 @@
 /* Estilo que se aplica cuando se pasa el cursor por encima de los enlaces */
 .menu a:hover {
   background-color: #315569; /* Cambia el color de fondo a un azul más claro cuando el enlace está en hover */
-}
-
-/* Estilo para el contenedor del contenido principal de la página */
-.content {
-  flex-grow: 1; /* Permite que el área de contenido se expanda para ocupar el espacio restante del contenedor principal */
-  padding: 15px; /* Añade un relleno de 20px dentro del área de contenido */
-  overflow-y: auto;
-  /* background-color: white;  */
 }

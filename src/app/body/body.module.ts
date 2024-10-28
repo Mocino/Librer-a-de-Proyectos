@@ -7,7 +7,7 @@ import { CardModule } from 'primeng/card';
 import { AddEditPatientComponent } from './components/add-edit-patient/add-edit-patient.component';
 import { ListPatientComponent } from './components/list-patient/list-patient.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     BodyRoutingModule,
     ReactiveFormsModule,
-    CardModule
+    CardModule,
+    TableModule
   ]
 })
 export class BodyModule { }
