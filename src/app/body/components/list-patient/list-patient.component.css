@@ -1,0 +1,45 @@
+.header-container {
+  background: linear-gradient(100deg, rgba(128, 128, 128, 1), rgba(128, 128, 128, 0)); /* Degradado gris a transparente */
+  color: black; /* Color del texto */
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 5px 30px; /* Espacio superior/inferior y espacio izquierdo/derecho */
+  margin-top: -1rem; /* Ajustamos el margen superior */
+  margin-bottom: 1rem; /* Ajustamos el margen superior */
+}
+
+.gradient-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+
+
+
+.rounded-table {
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Para que el borde redondeado aplique a todo el contenido */
+  position: relative; /* Asegura que el box-shadow se aplique correctamente */
+}
+
+/* Sombra solo en la parte inferior y a la izquierda */
+.rounded-table::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Alinea con el borde inferior de la tabla */
+  left: 0; /* Alinea con el borde izquierdo de la tabla */
+  width: 100%; /* Cubre todo el ancho de la tabla */
+  height: 10px; /* Altura de la sombra */
+  background: rgba(0, 0, 0, 0.2); /* Color y opacidad de la sombra */
+  border-radius: 0 0 8px 0; /* Borde redondeado solo en la parte inferior */
+  z-index: -1; /* Coloca la sombra detrás de la tabla */
+}
+
+.rounded-table table {
+  border-radius: inherit; /* Hereda el borde redondeado del contenedor */
+}
+
+::ng-deep .rounded-table .p-datatable-wrapper {
+  border-radius: 8px; /* Aplica el borde redondeado al contenedor de la tabla */
+  overflow: hidden; /* Asegura que no haya desbordamiento */
+}

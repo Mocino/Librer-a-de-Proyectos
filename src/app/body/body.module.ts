@@ -8,6 +8,9 @@ import { AddEditPatientComponent } from './components/add-edit-patient/add-edit-
 import { ListPatientComponent } from './components/list-patient/list-patient.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,12 @@ import { TableModule } from 'primeng/table';
     BodyRoutingModule,
     ReactiveFormsModule,
     CardModule,
-    TableModule
-  ]
+    TableModule,
+    ToastModule,
+    ButtonModule
+  ],
+  providers: [
+    MessageService // Agrega MessageService aquí
+  ],
 })
 export class BodyModule { }

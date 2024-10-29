@@ -1,20 +1,33 @@
-<p-table [value]="patients" >
-  <ng-template pTemplate="header">
-      <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Diagnosis</th>
-      </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-patient>
-      <tr>
-          <td>{{ patient.id }}</td>
-          <td>{{ patient.name }}</td>
-          <td>{{ patient.age }}</td>
-          <td>{{ patient.gender }}</td>
-          <td>{{ patient.diagnosis }}</td>
-      </tr>
-  </ng-template>
-</p-table>
+<p-card>
+
+  <div class="header-container">
+    <h3 class="gradient-title">Lista de Pacientes</h3>
+  </div>
+
+    <p-table
+      [value]="pacientes"
+      dataKey="nombrePaciente"
+      class="rounded-table"
+      [tableStyle]="{ 'min-width': '6rem' }">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nombre</th>
+          <th>Contacto</th>
+          <th>Fecha de Cita</th>
+          <th>Observación</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-paciente>
+        <tr>
+          <td>{{ paciente.nombrePaciente }}</td>
+          <td>{{ paciente.contacto }}</td>
+          <td>{{ paciente.fechaCita | date:'shortDate' }}</td>
+          <td>{{ paciente.observacion || 'N/A' }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+</p-card>
+
+

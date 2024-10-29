@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-export interface Patient {
-  id: string;
-  name: string;
-  age: number;
-  gender: string;
-  diagnosis: string;
-}
-
+import { Paciente } from '../../models/patient-Interfaz';
 
 @Component({
   selector: 'app-list-patient',
@@ -15,38 +8,36 @@ export interface Patient {
 })
 export class ListPatientComponent implements OnInit {
 
-  patients!: Patient[];
+  pacientes!: Paciente[];
+  expandedRows: { [key: string]: boolean } = {};
 
-  // Mock de datos
-  private mockPatients: Patient[] = [
+  private mockPacientes: Paciente[] = [
     {
-      id: '1',
-      name: 'Juan Pérez',
-      age: 30,
-      gender: 'Masculino',
-      diagnosis: 'Hipertensión'
+      nombrePaciente: 'Juan Pérez',
+      contacto: 'juan.perez@example.com',
+      fechaCita: new Date('2024-01-15'),
+      parteAfectada: [{ parte: 'cabeza' }, { parte: 'brazoi' }],
+      observacion: 'Requiere seguimiento'
     },
     {
-      id: '2',
-      name: 'Ana Gómez',
-      age: 25,
-      gender: 'Femenino',
-      diagnosis: 'Diabetes'
+      nombrePaciente: 'Ana Gómez',
+      contacto: 'ana.gomez@example.com',
+      fechaCita: new Date('2024-02-10'),
+      parteAfectada: [{ parte: 'torzo' }],
     },
     {
-      id: '3',
-      name: 'Luis Rodríguez',
-      age: 40,
-      gender: 'Masculino',
-      diagnosis: 'Asma'
+      nombrePaciente: 'Luis Rodríguez',
+      contacto: 'luis.rodriguez@example.com',
+      fechaCita: new Date('2024-03-05'),
+      parteAfectada: [{ parte: 'piernai' }, { parte: 'piesi' }],
+      observacion: 'Recuperación favorable'
     }
-    // Puedes agregar más pacientes aquí si lo deseas
   ];
 
   constructor() {}
 
   ngOnInit() {
-    // Simular la obtención de pacientes
-    this.patients = this.mockPatients;
+    this.pacientes = this.mockPacientes;
   }
+
 }
