@@ -1,5 +1,4 @@
 <div class="cards-container">
-
   <div class="cardFomulario">
     <div class="card-header">
       <h2>Formulario de Fisioterapia</h2>
@@ -7,6 +6,7 @@
     <div class="cardSubformulario">
 
       <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+        <pre>{{ patientForm.value | json }}</pre>
 
         <!-- Nombre del paciente -->
         <div class="formGroup">
@@ -66,8 +66,8 @@
 
               <!-- Tags -->
               <div class="tag" *ngFor="let tag of selectedTags">
-                {{tag.parte}} <!-- Aquí accedemos a la propiedad 'parte' de cada objeto PartesAfectadas -->
-                <span class="tag-close" (click)="removeTag(tag.parte)">&times;</span>
+                {{tag.parteAfectada}} <!-- Aquí accedemos a la propiedad 'parte' de cada objeto PartesAfectadas -->
+                <span class="tag-close" (click)="removeTag(tag.parteAfectada)">&times;</span>
               </div>
 
 
@@ -86,6 +86,7 @@
             </div>
           </div>
         </div>
+
 
         <!-- Observaciones -->
         <div class="formGroup">

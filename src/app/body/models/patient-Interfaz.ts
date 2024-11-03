@@ -9,5 +9,5 @@ export interface Paciente {
 
 export interface PartesAfectadas {
   idPaciente?: number;
-  parte: string;
+  parteAfectada: string;
 }

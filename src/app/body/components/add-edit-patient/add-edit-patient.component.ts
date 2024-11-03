@@ -20,7 +20,6 @@ export class AddEditPatientComponent implements OnInit{
     this.myForm();
 
     this.paciente = history.state.paciente || null; // Esto te da el paciente o null si no se pasó
-    console.log('información con partes afectadas', this.paciente)
     if (this.paciente) {
       this.populateForm(this.paciente); // Llama a una función para llenar el formulario si hay un paciente
     }
@@ -34,10 +33,12 @@ export class AddEditPatientComponent implements OnInit{
     this.patientForm.patchValue({
       nombrePaciente: paciente.nombrePaciente,
       contacto: paciente.contactoPaciente,
-      fechaCita: fechaFormateada, // Usar la fecha formateada
+      fechaCita: fechaFormateada,
       observacion: paciente.observaciones || '',
       parteAfectada: paciente.partesAfectadas
     });
+
+    this.selectedTags = paciente.partesAfectadas;
 
     console.log('patch', this.patientForm.value);
   }
@@ -72,10 +73,10 @@ export class AddEditPatientComponent implements OnInit{
   onPartSelected(part: string): void {
     if (!this.bodySelectedParts.has(part)) {
       this.bodySelectedParts.add(part);
-      this.selectedTags.push({ parte: part });
+      this.selectedTags.push({ parteAfectada: part });
     } else {
       this.bodySelectedParts.delete(part);
-      this.selectedTags = this.selectedTags.filter(tag => tag.parte !== part);
+      this.selectedTags = this.selectedTags.filter(tag => tag.parteAfectada !== part);
     }
 
     // Actualiza el valor del array en el formulario
@@ -85,7 +86,7 @@ export class AddEditPatientComponent implements OnInit{
   }
 
   removeTag(tagToRemove: string): void {
-    this.selectedTags = this.selectedTags.filter(tag => tag.parte !== tagToRemove);
+    this.selectedTags = this.selectedTags.filter(tag => tag.parteAfectada !== tagToRemove);
     this.bodySelectedParts.delete(tagToRemove);
 
     // Actualiza el valor del array en el formulario
