@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from '../../models/patient-Interfaz';
 import { PacienteService } from '../../services/paciente.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-patient',
@@ -13,7 +14,9 @@ export class ListPatientComponent implements OnInit {
 
 
   constructor(
-    private _pacienteService: PacienteService
+    private _pacienteService: PacienteService,
+    private _router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -35,6 +38,10 @@ export class ListPatientComponent implements OnInit {
   }
 
   editarPaciente(paciente: Paciente) {
-    console.log('Paciente seleccionado:', paciente);
+    this._router.navigate(['../agregar-paciente'], {
+      relativeTo: this.route,
+      state: { paciente }  // Pasar los datos del paciente a la ruta
+    });
   }
+
 }

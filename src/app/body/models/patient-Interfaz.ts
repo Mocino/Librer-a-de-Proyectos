@@ -3,10 +3,11 @@ export interface Paciente {
   nombrePaciente: string;
   contactoPaciente: string;
   fechaCitaPaciente: Date;
-  parteAfectada: PartesAfectadas[];
-  observacion?: string;
+  partesAfectadas: PartesAfectadas[];
+  observaciones?: string;
 }
 
 export interface PartesAfectadas {
+  idPaciente?: number;
   parte: string;
 }
