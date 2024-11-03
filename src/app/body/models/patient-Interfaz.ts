@@ -1,7 +1,7 @@
 export interface Paciente {
   nombrePaciente: string;
-  contacto: string;
-  fechaCita: Date;
+  contactoPaciente: string;
+  fechaCitaPaciente: Date;
   parteAfectada: PartesAfectadas[];
   observacion?: string;
 }
