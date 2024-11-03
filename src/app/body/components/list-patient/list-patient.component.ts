@@ -35,7 +35,6 @@ export class ListPatientComponent implements OnInit {
   }
 
   editarPaciente(paciente: Paciente) {
-    // Aquí puedes implementar la lógica para editar o ver detalles del paciente
     console.log('Paciente seleccionado:', paciente);
   }
 }
