@@ -4,59 +4,59 @@
       [ngClass]="{'hovered': isPartHovered('cabeza'), 'selected': isPartSelected('cabeza')}"
       (mouseenter)="onMouseEnter('cabeza')"
       (mouseleave)="onMouseLeave()"
-      (click)="onClick('cabeza')"
+      (click)="onClick([{ parteAfectada: 'cabeza' }])"
       [attr.d]="bodyPart.cabeza"
       id="path1" />
   </svg>
 
-  <svg  height="50" width="100" class="cuello">
+  <svg height="50" width="100" class="cuello">
     <path
       [ngClass]="{'hovered': isPartHovered('cuello'), 'selected': isPartSelected('cuello')}"
       (mouseenter)="onMouseEnter('cuello')"
       (mouseleave)="onMouseLeave()"
-      (click)="onClick('cuello')"
+      (click)="onClick([{ parteAfectada: 'cuello' }])"
       [attr.d]="bodyPart.cuello"
       id="path2" />
   </svg>
 
   <svg width="90" height="212" class="brazoi">
     <path
-    [ngClass]="{'hovered': isPartHovered('brazoi'), 'selected': isPartSelected('brazo izquierdo')}"
-    (mouseenter)="onMouseEnter('brazoi')"
-    (mouseleave)="onMouseLeave()"
-    (click)="onClick('brazo izquierdo')"
-    [attr.d]="bodyPart.brazoi"
-    id="path4" />
+      [ngClass]="{'hovered': isPartHovered('brazoi'), 'selected': isPartSelected('brazo izquierdo')}"
+      (mouseenter)="onMouseEnter('brazoi')"
+      (mouseleave)="onMouseLeave()"
+      (click)="onClick([{ parteAfectada: 'brazo izquierdo' }])"
+      [attr.d]="bodyPart.brazoi"
+      id="path4" />
   </svg>
 
   <svg width="90" height="212" class="brazod">
     <path
-     [ngClass]="{'hovered': isPartHovered('brazod'), 'selected': isPartSelected('brazo derecho')}"
-     (mouseenter)="onMouseEnter('brazod')"
-     (mouseleave)="onMouseLeave()"
-    (click)="onClick('brazo derecho')"
-    [attr.d]="bodyPart.brazod"
-       id="path5" />
+      [ngClass]="{'hovered': isPartHovered('brazod'), 'selected': isPartSelected('brazo derecho')}"
+      (mouseenter)="onMouseEnter('brazod')"
+      (mouseleave)="onMouseLeave()"
+      (click)="onClick([{ parteAfectada: 'brazo derecho' }])"
+      [attr.d]="bodyPart.brazod"
+      id="path5" />
   </svg>
 
   <svg width="110" height="175" class="torzo">
-      <path
-      [ngClass]="{'hovered': isPartHovered('torzo'), 'selected': isPartSelected('torzo')}"
+    <path
+      [ngClass]="{'hovered': isPartHovered('torso'), 'selected': isPartSelected('torso')}"
       (mouseenter)="onMouseEnter('torzo')"
       (mouseleave)="onMouseLeave()"
-      (click)="onClick('torzo')"
+      (click)="onClick([{ parteAfectada: 'torso' }])"
       [attr.d]="bodyPart.torzo"
       id="path6" />
   </svg>
 
   <svg width="60" height="160" class="piernai">
-      <path
-        [ngClass]="{'hovered': isPartHovered('piernai'), 'selected': isPartSelected('pierna izquierda')}"
-        (mouseenter)="onMouseEnter('piernai')"
-        (mouseleave)="onMouseLeave()"
-        (click)="onClick('pierna izquierda')"
-        [attr.d]="bodyPart.piernai"
-       id="path7" />
+    <path
+      [ngClass]="{'hovered': isPartHovered('piernai'), 'selected': isPartSelected('pierna izquierda')}"
+      (mouseenter)="onMouseEnter('piernai')"
+      (mouseleave)="onMouseLeave()"
+      (click)="onClick([{ parteAfectada: 'pierna izquierda' }])"
+      [attr.d]="bodyPart.piernai"
+      id="path7" />
   </svg>
 
   <svg width="60" height="160" class="piernad">
@@ -64,28 +64,29 @@
       [ngClass]="{'hovered': isPartHovered('piernad'), 'selected': isPartSelected('pierna derecha')}"
       (mouseenter)="onMouseEnter('piernad')"
       (mouseleave)="onMouseLeave()"
-      (click)="onClick('pierna derecha')"
+      (click)="onClick([{ parteAfectada: 'pierna derecha' }])"
       [attr.d]="bodyPart.piernad"
       id="path8" />
   </svg>
 
   <svg width="50" height="150" class="pied">
     <path
-    [ngClass]="{'hovered': isPartHovered('pied'), 'selected': isPartSelected('pie derecho')}"
-    (mouseenter)="onMouseEnter('pied')"
-    (mouseleave)="onMouseLeave()"
-    (click)="onClick('pie derecho')"
-    [attr.d]="bodyPart.piesd"
-    id="path9" />
+      [ngClass]="{'hovered': isPartHovered('pied'), 'selected': isPartSelected('pie derecho')}"
+      (mouseenter)="onMouseEnter('pied')"
+      (mouseleave)="onMouseLeave()"
+      (click)="onClick([{ parteAfectada: 'pie derecho' }])"
+      [attr.d]="bodyPart.piesd"
+      id="path9" />
   </svg>
 
   <svg width="50" height="150" class="piei">
-      <path
-        [ngClass]="{'hovered': isPartHovered('piei'), 'selected': isPartSelected('pie izquierdo')}"
-        (mouseenter)="onMouseEnter('piei')"
-        (mouseleave)="onMouseLeave()"
-        (click)="onClick('pie izquierdo')"
-        [attr.d]="bodyPart.piesi"
-         id="path10" />
+    <path
+      [ngClass]="{'hovered': isPartHovered('piei'), 'selected': isPartSelected('pie izquierdo')}"
+      (mouseenter)="onMouseEnter('piei')"
+      (mouseleave)="onMouseLeave()"
+      (click)="onClick([{ parteAfectada: 'pie izquierdo' }])"
+      [attr.d]="bodyPart.piesi"
+      id="path10" />
   </svg>
+
 </div>

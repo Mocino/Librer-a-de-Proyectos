@@ -38,6 +38,21 @@ export class AddEditPatientComponent implements OnInit{
       parteAfectada: paciente.partesAfectadas
     });
 
+    const mockPartesAfectadas: PartesAfectadas[] = [
+      // { idPaciente: 1, parteAfectada: 'brazo izquierdo' },
+      // { idPaciente: 1, parteAfectada: 'torzo' },
+      // { idPaciente: 1, parteAfectada: 'brazo derecho' },
+      // { idPaciente: 1, parteAfectada: 'pierna derecha' },
+      // { idPaciente: 1, parteAfectada: 'pierna izquierda' },
+      // { idPaciente: 1, parteAfectada: 'pie derecho' },
+      // { idPaciente: 1, parteAfectada: 'pie izquierdo' },
+      // { idPaciente: 1, parteAfectada: 'cuello' },
+      // { idPaciente: 1, parteAfectada: 'cabeza' }
+    ];
+
+    // this.onPartSelected(mockPartesAfectadas)
+    this.onPartSelected(paciente.partesAfectadas)
+
     this.selectedTags = paciente.partesAfectadas;
 
     console.log('patch', this.patientForm.value);
@@ -70,20 +85,29 @@ export class AddEditPatientComponent implements OnInit{
     this.bodySelectedParts.clear();
   }
 
-  onPartSelected(part: string): void {
-    if (!this.bodySelectedParts.has(part)) {
-      this.bodySelectedParts.add(part);
-      this.selectedTags.push({ parteAfectada: part });
-    } else {
-      this.bodySelectedParts.delete(part);
-      this.selectedTags = this.selectedTags.filter(tag => tag.parteAfectada !== part);
-    }
+  onPartSelected(parts: PartesAfectadas[]): void {
+    parts.forEach(part => {
+      const parteAfectada = part.parteAfectada;  // Obtenemos la parte afectada como string
+
+      console.log('loco',parteAfectada)
+
+      if (!this.bodySelectedParts.has(parteAfectada)) {
+        this.bodySelectedParts.add(parteAfectada);
+        this.selectedTags.push(part);  // Agregamos el objeto completo { parteAfectada, idPaciente }
+      } else {
+        this.bodySelectedParts.delete(parteAfectada);
+        this.selectedTags = this.selectedTags.filter(tag => tag.parteAfectada !== parteAfectada);
+      }
+    });
 
     // Actualiza el valor del array en el formulario
     this.patientForm.patchValue({
       parteAfectada: this.selectedTags
     });
+
   }
+
+
 
   removeTag(tagToRemove: string): void {
     this.selectedTags = this.selectedTags.filter(tag => tag.parteAfectada !== tagToRemove);

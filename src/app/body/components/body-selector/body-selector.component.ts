@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { BODY_PARTS, BodyPart } from '../../utils/body-parts';
+import { PartesAfectadas } from '../../models/patient-Interfaz';
 
 @Component({
   selector: 'app-body-selector',
@@ -7,7 +8,7 @@ import { BODY_PARTS, BodyPart } from '../../utils/body-parts';
   styleUrls: ['./body-selector.component.css']
 })
 export class BodySelectorComponent {
-  @Output() partClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() partClicked: EventEmitter<PartesAfectadas[]> = new EventEmitter<PartesAfectadas[]>();
   @Input() selectedParts: Set<string> = new Set();
 
   hoveredPart: string | null = null;
@@ -29,7 +30,7 @@ export class BodySelectorComponent {
     return this.selectedParts.has(part);
   }
 
-  onClick(part: string) {
+  onClick(part: PartesAfectadas[]) {
     this.partClicked.emit(part);
   }
 }
